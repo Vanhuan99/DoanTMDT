@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Index";
+
+}
+@model List<WebsitePhoneDoAn1.Models.Domain.OrderDetail>
+<h2>Count: @Model.Count</h2>
+<table class="table" style="width:1300px">
+    <thead>
+        <tr>
+            <td>Id</td>         
+            <td>OrderId</td>
+            <td>ProductId</td>
+            <td>Quantity</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Số Điện Thoại</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.OrderDetailId</td>
+            <td>@item.OrderId</td>
+            <td>@item.ProductId</td>
+            <td>@item.Quantity</td>
+            <td>@item.Name</td>
+            <td>@item.Email.ToString()</td>
+            <td>@item.Sdt.ToString()</td>
+
+            <td><a class="btn btn-outline-danger" asp-controller="QLDH" asp-action="Edit" asp-route-id="@item.OrderDetailId">Edit</a></td>
+            <td><a class="btn btn-outline-info" asp-controller="QLDH" asp-action="Delete" asp-route-id="@item.OrderDetailId">Delete</a></td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+

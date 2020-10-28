@@ -1,0 +1,227 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+    
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: auto;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+.mySlides {
+    display: none;
+}
+.container-2 {
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+}
+/*--contact start here--*/
+.contact-left {
+    margin: 5em 0em;
+}
+
+    .contact-left h3 {
+        font-size: 2em;
+        color: #821A1A;
+        margin-bottom: 0.8em;
+        font-family: 'Ruluko', sans-serif;
+        font-weight: 600;
+    }
+
+    .contact-left p {
+        font-size: 0.9em;
+        width: 100%;
+        color: #808080;
+        line-height: 1.9em;
+    }
+
+        .contact-left p a {
+            color: #000;
+        }
+
+            .contact-left p a:hover {
+                color: #908C8C;
+            }
+
+.contact-right h3 {
+    font-size: 2.5em;
+    color: #821A1A;
+    margin-bottom: 0.8em;
+    font-family: 'Ruluko', sans-serif;
+    font-weight: 600;
+}
+
+.contact-right p {
+    font-size: 1.05em;
+    color: #ECB731;
+    margin-bottom: 0.8em;
+    font-family: 'Ruluko', sans-serif;
+    font-weight: 600;
+}
+
+.contact-right input[type="text"] {
+    border: 1px solid #CAC8C8;
+    padding: 0.4em 0.7em;
+    width: 98.3%;
+    display: block;
+    margin-bottom: 1em;
+    outline: none;
+}
+
+.contact-right textarea {
+    border: 1px solid #CAC8C8;
+    padding: 0.8em 0.7em;
+    width: 98.3%;
+    display: block;
+    margin-bottom: 1em;
+    outline: none;
+    resize: none;
+    height: 200px;
+}
+
+.contact-right input[type="submit"] {
+    font-size: 1em;
+    color: #fff;
+    background: #ECB731;
+    border: none;
+    padding: 0.6em 1.5em;
+    outline: none;
+    display: inline-block;
+    font-family: 'Ruluko', sans-serif;
+    font-weight: 600;
+}
+
+    .contact-right input[type="submit"]:hover {
+        background: #821A1A;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+    }
+
+.map {
+    padding-bottom: 5em;
+}
+
+    .map iframe {
+        width: 100%;
+        height: 268px;
+        border: none;
+    }
+
+span.con-ph {
+    background: url(../images/phone.png)no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+}
+
+span.con-location {
+    background: url(../images/location.png)no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+}
+
+.con-phone {
+    padding: 1.3em 0em;
+    border-bottom: 1px solid #828282;
+    border-top: 1px solid #949393;
+    margin-top: 3.4em;
+}
+
+.con-address {
+    padding: 1.3em 0em;
+    border-bottom: 1px solid #949494;
+}
+
+.con-mail {
+    padding: 1.3em 0em;
+    border-bottom: 1px solid #949494;
+}
+
+span.con-email {
+    background: url(../images/email.png)no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+.con-para h6 {
+    font-size: 1em;
+    color: #821A1A;
+    margin-bottom: 0.3em;
+    font-family: 'Ruluko', sans-serif;
+    font-weight: 600;
+}
+
+.con-para {
+    float: right;
+    width: 90%;
+}

@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table>
+    <tr>
+        <th>
+            <h1>GIỎ HÀNG CỦA BẠN</h1>
+        </th>
+        <th colspan="6">
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        </th>
+    </tr>
+</table>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <tr>
+                    <th>Hình ảnh</th>
+                    <th>Tên Sản phẩm</th>
+                    <th>số lượng</th>
+                    <th>Giá tiền</th>
+                </tr>
+                @foreach (var item in ViewBag.cart)
+                {
+                    <tr>
+                        <td>
+                            <input type="hidden" value="@item.Product.ProductId" />
+                            <img src="~/images/@item.Product.ProductImage" height="60" width="60" />
+                        </td>
+                        <th>
+                            @item.Product.ProductName
+                        </th>
+                        <td>@item.Quantity</td>
+                        <td>@item.Product.ProductPrice</td>
+                    </tr>
+                }
+                <tr>
+                    <td align="right" colspan="6"><strong>Tạm tính:</strong></td>
+                    <td style="color:#d72626">
+                        @ViewBag.total
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="6">Khuyến mãi:</td>
+                    <td>
+                        0.00
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="6"><strong>Tổng tiền:</strong></td>
+                    <td style="color:#d72626">
+                        @ViewBag.total
+                    </td>
+                </tr>
+            </table>
+            <form action="/Cart/XacNhan" method="post">
+                <h4>THÔNG TIN KHÁCH HÀNG</h4>
+                <div class="form-group">
+                    <label for="inputName">Họ và tên: </label>
+                    <input type="text" class="form-control" name="Name" id="Name" placeholder="FullName">
+                </div>
+                <div class="form-group">
+                    <label for="inputSDT">Số điện thoại: </label>
+                    <input type="number" class="form-control" name="sdt" id="sdt" placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" name="Email" id="Email" placeholder="Email">
+                </div><br />
+                <div>
+                    <input type="submit" class="form-control btn-outline-success" value="THANH TOÁN" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

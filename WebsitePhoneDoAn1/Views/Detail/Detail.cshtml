@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model WebsitePhoneDoAn1.Models.Domain.Product
+<h1>Detail</h1>
+<div class="card">
+    @foreach (var item in ViewBag.CategoryList)
+    {
+        <div class="card-header">
+            <h4 class="card-title"><a href="$">@item.CategoryName</a></h4>
+        </div>
+    }
+
+</div>
+

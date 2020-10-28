@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+@model WebsitePhoneDoAn1.Models.Domain.Product
+
+<h1>Add product</h1>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Add" asp-controller="Product" method="post" enctype="multipart/form-data">
+            <div class="form-group row">
+                <label asp-for="ProductName" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-6">
+                    <input asp-for="ProductName" class="form-control" />
+                </div>
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Descriptions" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-6">
+                    <input asp-for="Descriptions" class="form-control" />
+                </div>
+                <span asp-validation-for="Descriptions" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="ProductQuantity" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-6">
+                    <input asp-for="ProductQuantity" class="form-control" />
+                </div>
+                <span asp-validation-for="ProductQuantity" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="ProductPrice" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-6">
+                    <input asp-for="ProductPrice" class="form-control" />
+                </div>
+                <span asp-validation-for="ProductPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="CategoryId" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-6">
+                    <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Selected"></select>
+                </div>
+            </div>
+
+            @*<div class="form-group row">
+                    <label asp-for="CategoryId" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-6">
+                        @Html.DropDownList("CategoryId", new SelectList(ViewBag.p, "CategoryId", "CategoryName"))
+                    </div>
+                </div>*@
+
+
+            @*<div class="form-group">
+                    @Html.LabelFor(model => model.CategoryId, "CategoryId", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+
+                        @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+                    </div>
+                </div>*@
+
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Image</label>
+                <div class="col-sm-6">
+                    <input class="form-control" type="file" name="photo" />
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</div>

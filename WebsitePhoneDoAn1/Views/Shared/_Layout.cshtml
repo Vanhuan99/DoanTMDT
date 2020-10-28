@@ -1,0 +1,306 @@
+﻿@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Phone Store</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="~/css/layout.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="~/css/site2.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <img src="~/Images/Apple.png" alt="logo" style="width:50px;" />
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Phone Store</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                @if (User.IsInRole("Administrator"))
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="HomeAdmin">Admin</a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                        <partial name="_LoginPartial" />
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="w3-container w3-padding-32 w3-dark-grey">
+            <div class="w3-row-padding">
+                <div class="w3-third">
+                    <h3 style="text-align:center">Phone Store</h3>
+                    <p>Với bề dày gần 10 năm kinh nghiệm và uy tín đã tạo được trong những năm vừa qua, chúng tôi luôn đem lại cho khách hàng sự hài lòng và thỏa mãn với tất cả các sản phẩm của mình.</p>
+                    <p>
+                        Bên cạnh đó là đội ngũ nhân viên nhiệt tình chu đáo và đầy kinh nghiệm của chúng tôi luôn đưa được ra cho khách hàng những thông tin có giá trị và giúp khách hàng lựa chọn được những sản phẩm phù hợp nhất.
+                        Để nâng cao thương hiệu của mình, mục tiêu của chúng tôi trong thời gian tới là cung cấp đến tận tay khách hàng những sản phẩm chính hãng với chất lượng đảm bảo và uy tín cũng như giá cả hợp lý nhất.
+                    </p>
+                </div>
+
+                <div class="w3-third">
+                    <h3>Liên Hệ </h3>
+                    <ul class="w3-ul w3-hoverable">
+                        <li>
+
+                        </li>
+                        <li class="w3-padding-16" style="text-align:center">
+                            <i class="fa fa-map-marker"></i>
+                            <p>155 Sư Vạn Hạnh, Phường 12, Quận 10, TP HCM </p>
+                        </li>
+                        <li class="w3-padding-16" style="text-align:center">
+                            <i class="fa fa-phone"></i>
+                            <p>+84.85.855.855</p>
+                        </li>
+                        <li class="w3-padding-16" style="text-align:center">
+                            <i class="fa fa-envelope"></i>
+                            <p><a href="#">PhoneStore@gmail.com</a></p>
+                        </li>
+                        <li>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="w3-third">
+                    <p>
+
+                    </p>
+                    <p style="text-align:center">
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom"><i class="fa fa-home"></i>Trang Chủ</span>
+                    </p>
+                    <p style="text-align:center">
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom"><i class="fa fa-info-circle"></i>Giới Thiệu</span>
+                    </p>
+                    <p style="text-align:center">
+
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom"><i class="fa fa-cart-plus"></i>Sản Phẩm</span>
+                    </p>
+                    <p style="text-align:center">
+                        <span class="w3-tag w3-grey w3-small w3-margin-bottom"><i class="fa fa-phone"></i>Liên Hệ</span>
+                    </p>
+                    <div class="footer-icons" style="text-align:center">
+
+                        <a href="#"><i class="fa fa-facebook"></i>Facebook</a>
+                        <a href="#"><i class="fa fa-twitter">Twitter</i></a>
+                        <a href="#"><i class="fa fa-instagram"></i>Instagram</a>
+                        <a href="#"><i class="fa fa-github">Github</i></a>
+
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+        <div class="w3-black w3-center w3-padding-24">Võ Văn Huân <a href="#" title="W3.CSS" target="_blank" class="w3-hover-opacity">Đoàn Thanh Sang</a></div>
+
+        <script>
+            // Script to open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("myOverlay").style.display = "block";
+            }
+
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("myOverlay").style.display = "none";
+            }
+        </script>
+
+
+        <div class="container-fluid text-center" style="background-color:gray; margin-top:30px">
+        </div>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+    </body>
+    </html>*@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="~/css/layout.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/site2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="jumbotron">
+
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm fixed-top navbar-light bg-white border-bottom box-shadow mb-6">
+                <div class="container">
+
+                    <img src="~/Images/Apple.png" alt="logo" style="width:100px;" />
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Phone Store</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <partial name="_LoginPartial" style="font-size:20px" />
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a style="font-size:20px" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="GioiThieu">Giới Thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="font-size:20px" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Sản Phẩm</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="font-size:20px" class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">Giỏ Hàng</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="font-size:20px" class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="LienHe">Liên Hệ</a>
+                            </li>
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                @if (User.IsInRole("Administrator"))
+                                {
+                                    <li class="nav-item">
+                                        <a style="font-size:20px" class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="HomeAdmin">Quản Lí</a>
+                                    </li>
+                                }
+                            }
+
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="w3-container w3-padding-32 w3-dark-grey">
+        <div class="w3-row-padding">
+            <div class="w3-third">
+                <h3 style="text-align:center">Phone Store</h3>
+                <p>Với bề dày gần 10 năm kinh nghiệm và uy tín đã tạo được trong những năm vừa qua, chúng tôi luôn đem lại cho khách hàng sự hài lòng và thỏa mãn với tất cả các sản phẩm của mình.</p>
+                <p>
+                    Bên cạnh đó là đội ngũ nhân viên nhiệt tình chu đáo và đầy kinh nghiệm của chúng tôi luôn đưa được ra cho khách hàng những thông tin có giá trị và giúp khách hàng lựa chọn được những sản phẩm phù hợp nhất.
+                    Để nâng cao thương hiệu của mình, mục tiêu của chúng tôi trong thời gian tới là cung cấp đến tận tay khách hàng những sản phẩm chính hãng với chất lượng đảm bảo và uy tín cũng như giá cả hợp lý nhất.
+                </p>
+            </div>
+
+            <div class="w3-third">
+
+                <ul class="w3-ul w3-hoverable">
+                    <li>
+
+                    </li>
+                    <li class="w3-padding-16" style="text-align:center">
+                        <i class="fa fa-map-marker"></i>
+                        <p>155 Sư Vạn Hạnh, Phường 12, Quận 10, TP HCM </p>
+                    </li>
+                    <li class="w3-padding-16" style="text-align:center">
+                        <i class="fa fa-phone"></i>
+                        <p>+84.85.855.855</p>
+                    </li>
+                    <li class="w3-padding-16" style="text-align:center">
+                        <i class="fa fa-envelope"></i>
+                        <p><a href="#">PhoneStore@gmail.com</a></p>
+                    </li>
+                    <li>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="w3-third">
+                <p>
+
+                </p>
+                <p style="text-align:center">
+                    <span class="w3-tag w3-grey w3-small w3-margin-bottom"><i class="fa fa-home"></i>Trang Chủ</span>
+                </p>
+                <p style="text-align:center">
+                    <span class="w3-tag w3-grey w3-small w3-margin-bottom"><i class="fa fa-info-circle"></i>Giới Thiệu</span>
+                </p>
+                <p style="text-align:center">
+
+                    <span class="w3-tag w3-grey w3-small w3-margin-bottom"><i class="fa fa-cart-plus"></i>Sản Phẩm</span>
+                </p>
+                <p style="text-align:center">
+                    <span class="w3-tag w3-grey w3-small w3-margin-bottom"><i class="fa fa-phone"></i>Liên Hệ</span>
+                </p>
+                <div class="footer-icons" style="text-align:center">
+
+                    <a href="#"><i class="fa fa-facebook"></i>Facebook</a>
+                    <a href="#"><i class="fa fa-twitter">Twitter</i></a>
+                    <a href="#"><i class="fa fa-instagram"></i>Instagram</a>
+                    <a href="#"><i class="fa fa-github">Github</i></a>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="w3-black w3-center w3-padding-24">Võ Văn Huân - <a href="#" title="W3.CSS" target="_blank" class="w3-hover-opacity"> - Đoàn Thanh Sang</a></div>
+
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+
+
+    <div class="container-fluid text-center" style="background-color:gray; margin-top:30px">
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
